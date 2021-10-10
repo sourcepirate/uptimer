@@ -7,8 +7,9 @@ from typing import Any, Dict, List
 
 import requests
 
+
 def check_domain(domain_url: str) -> Dict[str, Any]:
-    
+
     try:
         current_time = datetime.now()
         session = requests.Session()
@@ -19,7 +20,7 @@ def check_domain(domain_url: str) -> Dict[str, Any]:
             "content_type": response.headers.get("Content-Type"),
             "current_time": int(current_time.timestamp()),
             "domain_url": domain_url,
-            "domain": urlparse(domain_url).hostname
+            "domain": urlparse(domain_url).hostname,
         }
     except Exception:
         return {
@@ -27,8 +28,9 @@ def check_domain(domain_url: str) -> Dict[str, Any]:
             "latency": 0,
             "current_time": int(current_time.timestamp()),
             "domain_url": domain_url,
-            "domain": urlparse(domain_url).hostname
+            "domain": urlparse(domain_url).hostname,
         }
+
 
 def access_domains(domains: List[str]) -> Dict[str, Any]:
     responses = []

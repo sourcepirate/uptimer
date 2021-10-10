@@ -6,7 +6,9 @@ from bisect import insort_right
 from json import dumps
 
 
-def indexing_range(index_list: List[Any], start: int, end: int, key=lambda x: x):
+def indexing_range(
+    index_list: List[Any], start: int, end: int, key=lambda x: x
+):
     """return the slices between the given range
 
     Assuming the index_list is sorted this function  is going to return a slice of (start, end)
@@ -56,5 +58,3 @@ class InmemoryDB(object):
         self.outfd.write(dumps(data))
         self.outfd.seek(0)
         self.outfd.flush()
-        
-        

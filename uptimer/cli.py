@@ -11,8 +11,9 @@ from uptimer.parser import parse_domain
 
 db = InmemoryDB()
 
+
 @click.command()
-@click.argument('filename')
+@click.argument("filename")
 def main(filename):
     """Console script for uptimer."""
     click.echo(f"Parsing - {filename}")
